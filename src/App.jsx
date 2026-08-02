@@ -1,9 +1,10 @@
 import React from 'react'
-
+import Navbar  from './components/Navbar';
 function App() {
   return (
   <>
-  <h1>Movie App</h1>
+  <Navbar />
+  <h1>Home Page</h1>
   </>
   )
 }
