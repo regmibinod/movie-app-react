@@ -1,10 +1,10 @@
 import React from 'react'
 
-function MovieCard() {
+function MovieCard(props) {
   return (
     <div>
-        <h2>Movie Title</h2>
-        <p>⭐ Rating: 8.5</p>
+        <h2>{props.title}</h2>
+        <p>⭐ Rating: {props.rating}</p>
     </div>
   )
 }

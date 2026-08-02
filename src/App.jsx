@@ -6,7 +6,8 @@ function App() {
   <>
   <Navbar />
   <h1>Home Page</h1>
-  <MovieCard />
+  <MovieCard title="Black Sails" rating={8.6} />
+  <MovieCard title="Viking" rating={9.2} />
   </>
   )
 }
