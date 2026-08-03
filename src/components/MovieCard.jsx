@@ -1,12 +1,13 @@
 import React from 'react'
 
-function MovieCard(props) {
+function MovieCard({movie}) {
   return (
     <div>
-        <h2>{props.title}</h2>
-        <p>⭐ Rating: {props.rating}</p>
+        <h2>{movie.title}</h2>
+        <p>⭐ Rating: {movie.rating}</p>
+        
     </div>
   )
 }
 
-export default MovieCard
+export default MovieCard;
