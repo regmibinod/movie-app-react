@@ -2,7 +2,9 @@ import React from 'react'
 
 function MovieDetails() {
   return (
-    <div>MovieDetails</div>
+    <div>
+        <h1>Movie Details Page</h1>
+    </div>
   )
 }
 
