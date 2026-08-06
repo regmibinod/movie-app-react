@@ -2,10 +2,11 @@ import React from "react";
 import { useState } from "react";
 function MovieCard({movie}) {
 const {title, rating, year, image} = movie;
+
   return (
     <div className="movie-card">
  
-      <img src={image} alt={title} />
+      <img src={`${image}`} alt={title} />
 
       <div className="movie-content">
         <h2>Movie: {title}</h2>

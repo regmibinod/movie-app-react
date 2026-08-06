@@ -22,7 +22,7 @@ const moviesData = [
   },
 ];
 
-export default moviesData;
+// export default moviesData;
 
 
 
