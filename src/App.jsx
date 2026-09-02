@@ -1,50 +1,52 @@
-import React from "react";
 import Navbar from "./components/Navbar";
-import MovieCard from "./components/MovieCard";
-// import moviesData from "./data/movies";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Home from "./pages/Home";
+import Favourites from "./pages/Favourites";
+import { Routes, Route } from "react-router-dom";
+
 function App() {
-  // const [movies, setMovies] = useState(moviesData);
-  const [index, setIndex] = useState(0);
+  const [favourite, setFavourite] = useState(() => {
+    const saved = JSON.parse(localStorage.getItem("favourite"));
+    return saved ? saved : [];
+  });
 
-  // function addMovie() {
-  //   const demoMovies = [
-  //     {
-  //       id: Date.now(),
-  //       title: "Batman",
-  //       rating: 9.0,
-  //       image: "a",
-  //     },
-  //     {
-  //       id: Date.now(),
-  //       title: "Avengers",
-  //       rating: 9.0,
-  //       image: "a",
-  //     },
-  //     {
-  //       id: Date.now(),
-  //       title: "Spider-man",
-  //       rating: 9.0,
-  //       image: "a",
-  //     },
-  //   ];
-  //   if (index >= demoMovies.length) return;
+  const isFavourite = (movieId) => {
+    return favourite.some((m) => m.id === movieId);
+  };
+  const toggleFavourite = (movie) => {
+    setFavourite((prev) => {
+      if (prev.some((m) => m.id === movie.id)) {
+        return prev.filter((m) => m.id !== movie.id);
+      } else {
+        return [...prev, movie];
+      }
+    });
+  };
 
-  //   setIndex(index + 1);
-  //   const movieAdd = demoMovies[index];
-  //   setMovies([...movies, movieAdd]);
-  // }
-
+  useEffect(() => {
+    localStorage.setItem("favourite", JSON.stringify(favourite));
+  }, [favourite]);
   return (
     <>
       <Navbar />
-      {/* <h1>Home Page</h1> */}
-      <Home />
-   
-      {/* {movies.map((movie) => (
-        <MovieCard movie={movie} key={movie.id} />
-      ))} */}
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Home isFavourite={isFavourite} toggleFavourite={toggleFavourite} />
+          }
+        />
+        <Route
+          path="/favourites"
+          element={
+            <Favourites
+              isFavourite={isFavourite}
+              toggleFavourite={toggleFavourite}
+              favourite={favourite}
+            />
+          }
+        />
+      </Routes>
     </>
   );
 }

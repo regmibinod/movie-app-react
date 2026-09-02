@@ -1,0 +1,312 @@
+/* start of movie card css */
+
+/* ============================
+   MOVIE CARD CONTAINER
+============================ */
+.movie-card {
+  background: #1a1a1a;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+}
+
+/* Hover lift effect */
+.movie-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.55);
+}
+
+/* ============================
+   MOVIE IMAGE
+============================ */
+.movie-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+/* ============================
+   FAVORITE BUTTON (heart)
+============================ */
+.favorite-toggle {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  border: none;
+  color: #ff3d71;
+  font-size: 24px;
+  padding: 6px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s ease;
+  backdrop-filter: blur(4px);
+}
+
+.favorite-toggle:hover {
+  transform: scale(1.15);
+  background: rgba(255, 61, 113, 0.25);
+}
+
+/* ============================
+   MOVIE CONTENT
+============================ */
+.movie-content {
+  padding: 14px;
+}
+
+/* Title */
+.movie-content h2 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* ============================
+   META INFO (rating + year)
+============================ */
+.movie-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #cccccc;
+  margin-top: 6px;
+}
+
+.movie-meta p {
+  margin: 0;
+}
+
+/* end of movie card css */
+
+/* navbar css */
+/* NAVBAR CONTAINER */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 40px;
+  background: #0d0d0d;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* LOGO */
+.nav-logo {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav-logo:hover {
+  color: #ff3d71;
+  transform: scale(1.05);
+}
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 30px;
+  list-style: none;
+}
+
+/* INDIVIDUAL LINK */
+.nav-item {
+  color: #e6e6e6;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  padding: 6px 10px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* HOVER EFFECT */
+.nav-item:hover {
+  color: #ff3d71;
+}
+
+/* ACTIVE LINK (NavLink auto adds .active) */
+.nav-item.active {
+  color: #ff3d71;
+  font-weight: 600;
+}
+
+/* UNDERLINE ANIMATION */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ff3d71;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after,
+.nav-item.active::after {
+  width: 100%;
+}
+/* end of navar css */
+
+/*start  home css start */
+/* ============================
+   HOME PAGE CONTAINER
+============================ */
+.home-container {
+  padding: 30px 40px;
+  color: #ffffff;
+  background: #0d0d0d;
+  min-height: 100vh;
+}
+
+/* ============================
+   PAGE TITLE
+============================ */
+.home-container h1 {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  color: #ff3d71;
+}
+
+/* ============================
+   SEARCH INPUT
+============================ */
+.search-input {
+  width: 100%;
+  max-width: 400px;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  margin-bottom: 25px;
+  background: #1a1a1a;
+  color: #ffffff;
+  transition: 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+.search-input:focus {
+  border-color: #ff3d71;
+  box-shadow: 0 0 8px rgba(255, 61, 113, 0.4);
+}
+
+/* ============================
+   ERROR MESSAGE
+============================ */
+.error-message {
+  color: #ff3d71;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+/* ============================
+   LOADING ANIMATION
+============================ */
+.loading {
+  font-size: 20px;
+  color: #ff3d71;
+  animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================
+   MOVIES GRID
+============================ */
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+
+/* ============================
+   MOVIE CARD (optional override)
+============================ */
+.movie-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.movie-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* IMAGE */
+.movie-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* INFO SECTION */
+.movie-info {
+  padding: 12px;
+}
+
+.movie-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #ffffff;
+}
+
+.movie-year,
+.movie-rating {
+  font-size: 14px;
+  color: #cccccc;
+}
+
+/* ============================
+   NO MOVIES FOUND
+============================ */
+.no-results {
+  font-size: 18px;
+  color: #cccccc;
+  margin-top: 20px;
+}
+
+/* end of home css start */
+
+/* start of favourite container */
+.favourites-container {
+  padding: 30px 40px;
+  background: #0d0d0d;
+  min-height: 100vh;
+  color: #ffffff;
+}
+
+/* end of the favourite container */
