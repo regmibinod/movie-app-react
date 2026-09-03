@@ -1,16 +1,74 @@
-# React + Vite
+🎬 Movie App (React + TMDB API)
+A modern movie browsing application built with React, Vite, TMDB API, React Router, and LocalStorage.
+Users can explore popular movies, search titles, and save favourites that persist even after refresh.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🚀 Live Demo
+🔗 https://regmibinod.github.io/movie-app-react/
 
-Currently, two official plugins are available:
+🛠️ Tech Stack
+React (Components, Hooks)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Vite (Fast bundler)
 
-## React Compiler
+TMDB API (Movie data)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+React Router (Navigation)
 
-## Expanding the ESLint configuration
+LocalStorage (Save favourites)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+GitHub Pages (Deployment)
+
+✨ Features
+🔍 Search movies by title
+
+🎞️ Browse popular movies from TMDB
+
+❤️ Add/remove favourites
+
+💾 Favourites saved in LocalStorage
+
+📱 Responsive UI
+
+⚡ Fast performance with Vite
+
+🎨 Clean movie card layout
+
+🔗 Fully deployed on GitHub Pages
+
+
+Clone the repository:
+
+bash
+git clone https://github.com/regmibinod/movie-app-react
+cd movie-app-react
+npm install
+npm run dev
+🔧 Build & Deploy (GitHub Pages)
+Build the project:
+
+bash
+npm run build
+Deploy to GitHub Pages:
+
+bash
+npm run deploy
+🌐 API Used
+This project uses The Movie Database (TMDB) API:
+https://developer.themoviedb.org/
+
+📁 Project Structure
+Code
+movie-app-react/
+│── src/
+│   ├── components/
+│   ├── pages/
+│   ├── App.jsx
+│   ├── main.jsx
+│── public/
+│── package.json
+│── vite.config.js
+│── README.md
+👨‍💻 Author
+Binod Regmi  
+📍 Auckland, New Zealand
+💼 React Developer (Portfolio Project)
